@@ -1,0 +1,12 @@
+imutils
+numpy
+opencv-contrib-python
+opencv-python
+tensorflow
+scikit-learn
+python-dotenv
+fastapi
+uvicorn
+fastapi[all]
+opencv-python-headless
+pandas
