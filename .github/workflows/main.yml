@@ -21,6 +21,9 @@ jobs:
     - name: install system packages
       run: apt install -y tree 
     - name: execute model
+      env:
+        USER_DATASET: ${{secrets.USER_DATASET}} 
+        MODEL_NAME: ${{secrets.MODEL_NAME}} 
       run: python Entrenamiento.py
     - name: show dir
       run: pwd; ls -la faces-model
