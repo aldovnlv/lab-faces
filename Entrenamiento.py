@@ -9,6 +9,7 @@ import tensorflow as tf
 
 import pathlib
 from tensorflow.keras.optimizers import Adam
+import shutil
 
 # Set the path of the input folder
 
@@ -59,7 +60,7 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 
 model.fit(X_train.reshape(-1, 150, 150, 1), y_train, epochs=10, validation_data=(X_test.reshape(-1, 150, 150, 1), y_test))
 
+shutil.rmtree(dataPath)
 # Guarda el modelo
 export_path = os.getenv('MODEL_NAME') + '/1/'
 tf.keras.models.save_model(model, os.path.join('./', export_path))
-os.remove(dataPath)
