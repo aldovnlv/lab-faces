@@ -26,7 +26,7 @@ jobs:
         MODEL_NAME: ${{secrets.MODEL_NAME}} 
       run: python Entrenamiento.py
     - name: show dir
-      run: pwd; ls -la faces-model
+      run: ls -la ${{secrets.MODEL_NAME}}
 
     - name: docker login
       env:
